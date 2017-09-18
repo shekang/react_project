@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Logo from './test/logo'
+import Clock from './test/clock'
+import NameForm from './test/nameForm'
 import './App.css';
 
-function Test(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
 class App extends Component {
-  render() {
-    return (
-      
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React</h2>
+ constructor(props){
+   super(props)
+   this.centerbox = {
+    centerClass:'centerbox'
+   }
+  //  this.btnClick = this.btnClick.bind(this);
+ }
+ btnClick(e){
+    console.log('this is'+this)
+ }
+ // <Logo  title="logo"/>
+ // <Clock/>
+ // <button type="button" onClick={(e) => this.btnClick(e)}>清楚时钟</button>
+ render() {
+   return (
+     <div className={this.centerbox.centerClass}>
+       <NameForm/>
+     </div>
 
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-      // <div>
-      //   <Test name="test1"/>
-      //   <Test name="test"/>
-      // </div>
-    ); 
-  }
+   );
+ }
 }
 
 export default App;
